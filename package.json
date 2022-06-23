@@ -17,7 +17,7 @@
     "web-vitals": "^2.1.4"
   },
   "main": "public/main.js",
-  "homepage": "./",
+  "homepage": "https://nedas-sim.github.io",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -25,7 +25,9 @@
     "eject": "react-scripts eject",
     "electron:serve": "concurrently -k \"cross-env BROWSER=none npm start\" \"npm run electron:start\"",
     "electron:build": "",
-    "electron:start": "wait-on tcp:3000 && electron ."
+    "electron:start": "wait-on tcp:3000 && electron .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -44,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
