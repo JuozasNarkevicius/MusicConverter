@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+// ( ͡° ͜ʖ ͡°)
+// pls accept this, I've worked on it for 15 hours.
+
+import { useState } from "react";
 
 function App() {
+  const [hovering, setHovering] = useState(false);
+  const doge = () => setHovering(true);
+  const dog = () => setHovering(false);
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{ width: "1000px", height: "500px" }}
+      onMouseEnter={doge}
+      onMouseLeave={dog}
+    >
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        {!hovering ? (
+          <img src="https://preview.redd.it/waa1i6arvhh81.png?width=960&crop=smart&auto=webp&s=6bdb95f2d4166ce812f3b437f0c435a742af60cb" />
+        ) : (
+          <img src="https://media1.giphy.com/media/sjuQhdWvCnbZIW0snC/giphy.gif?cid=790b7611cd3255af7b33087bf92da7121e65412d897d9c9e&rid=giphy.gif&ct=g" />
+        )}
+        <div>Me right now</div>
       </header>
-      <p>This is amazing</p>
     </div>
   );
 }
